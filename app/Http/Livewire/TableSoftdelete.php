@@ -22,18 +22,22 @@ class TableSoftdelete extends Component
 
     public function render()
     {
-        return view('livewire.table-softdelete', ['deletePosts' => Post::onlyTrashed()->get()]);
+        return view('livewire.table-softdelete', ['deletePosts' => Post::onlyTrashed()->paginate(3, ['*'], 'deletePostsPage')]);
     }
 
     public function restore($id)
     {
-        Post::onlyTrashed($id)->restore();
+        Post::onlyTrashed()->where('id', $id)->restore();
+
+        session()->flash('message', __('Post Restore successfully'));
 
     }
     
     public function forceDelete($id)
     {
-        Post::onlyTrashed($id)->forceDelete();
+        Post::onlyTrashed()->where('id', $id)->forceDelete();
+
+        session()->flash('message', __('Post Delete Permanent'));
 
     }
 

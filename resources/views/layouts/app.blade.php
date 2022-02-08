@@ -22,10 +22,10 @@
 
         @yield('content')
     
+        @include('footer')
+
         @livewireScripts
 
         <script type="{{ asset('js/app.js') }}"></script>
-        
-
     </body>
 </html>

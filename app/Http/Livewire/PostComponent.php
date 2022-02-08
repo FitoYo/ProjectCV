@@ -47,6 +47,9 @@ class PostComponent extends Component
     public function destroy($id)
     {
         Post::find($id)->delete();
+
+        session()->flash('message', __('Post Delete'));        
+
     }
 
 
@@ -58,8 +61,9 @@ class PostComponent extends Component
             'title' => $this->title,
             'body' => $this->body,
             'slug' => $this->slug
-        ]);
-        //$this->edit($post->id);
+        ]);    //$this->edit($post->id);
+        session()->flash('message', __('Post Create successfully'));
+
         $this->default();
     }
 
@@ -86,6 +90,8 @@ class PostComponent extends Component
             'body' => $this->body,
             'slug' => $this->slug
         ]);
+        session()->flash('message', __('Post Update successfully'));
+
         $this->default();
     }
 

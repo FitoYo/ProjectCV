@@ -1,6 +1,10 @@
 <div class="container">
 	<h1><span class="badge bg-success d-block">List of Posts</span></h1>
-
+@if (session()->has('message'))
+    <div class="alert alert-danger">
+        {{ session('message') }}
+    </div>
+@endif
 <table class="table border-success shadow">
 	<thead>
 		<tr>

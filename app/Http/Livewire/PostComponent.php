@@ -15,6 +15,7 @@ class PostComponent extends Component
 
 
     protected $paginationTheme = 'bootstrap';
+    protected $listeners = ['refreshPostComponent' => '$refresh']; //para el refresh del otro componente
 
     public $post;
 
@@ -48,7 +49,9 @@ class PostComponent extends Component
     {
         Post::find($id)->delete();
 
-        session()->flash('message', __('Post Delete'));        
+        session()->flash('message', __('Post Delete'));
+
+        $this->emitTo('table-softdelete', 'refreshTableSoftdelete'); //refresh del otro componente   
 
     }
 

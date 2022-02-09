@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12 d-flex" style="height: 1200px">
+        <div class="col-md-12 d-flex mb-4" style="height: auto">
             <div class="d-flex d-flex-row">
                 <div class="col-md-4">
                     @auth
@@ -26,12 +26,14 @@
                 </div>
             </div>
         </div>
+
+        <div class="mt-4">
         @auth
             <div class="col-md-8">
                 @include('livewire.table-delete')
             </div>
         @endauth    
-        
+        </div>
     </div>
 
 </div>

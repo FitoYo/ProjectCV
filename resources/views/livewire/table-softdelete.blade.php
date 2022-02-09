@@ -5,7 +5,6 @@
         </div>
     @endif
     <h1><span class="badge bg-outline-success text-success d-block">Posts Deletes</span></h1>
-
 <table class="table border-success shadow">
     <thead>
         <tr>

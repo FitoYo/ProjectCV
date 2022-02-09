@@ -7,18 +7,15 @@
         <title>Project CV</title>
 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    @livewireStyles    
+         
     </head>
     <body>
     
         @include('nav')
 
-        @livewire('post-component')            {{-- {{ $slot ?? ''}}  --}}           
-
+        @yield('content')
+    
         @include('footer')
-
-        @livewireScripts
 
         <script type="{{ asset('js/app.js') }}"></script>
     </body>

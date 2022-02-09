@@ -30,7 +30,7 @@
         <div class="mt-4">
         @auth
             <div class="col-md-8">
-                @include('livewire.table-delete')
+                @livewire('table-softdelete')
             </div>
         @endauth    
         </div>

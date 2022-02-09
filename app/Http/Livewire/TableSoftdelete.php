@@ -13,7 +13,7 @@ class TableSoftdelete extends Component
     protected $paginationTheme = 'bootstrap';
     protected $listeners = ['refreshTableSoftdelete' => '$refresh']; //para el refresh del otro componente
 
-    //public $deletePosts
+    //public $deletePosts = [];
     
 
     public function render()
